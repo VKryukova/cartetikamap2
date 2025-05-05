@@ -2,9 +2,22 @@ const map = new maplibregl.Map({
   container: "map",
   style:
     "https://raw.githubusercontent.com/gtitov/basemaps/refs/heads/master/positron-nolabels.json",
-  center: [80, 47],
+  center: [90, 57],
   zoom: 2,
 });
+
+function updateZoomForMobile() {
+  if (window.innerWidth <= 450) {
+    map.setZoom(0.9);
+    map.setCenter([95, 65]);
+  } else {
+    map.setZoom(2);
+    map.setCenter([90, 57]);
+  }
+}
+
+window.addEventListener("load", updateZoomForMobile);
+window.addEventListener("resize", updateZoomForMobile);
 
 function updateSelectedList() {
   const features = map.queryRenderedFeatures({
@@ -27,8 +40,7 @@ function updateSelectedList() {
               (document.getElementById(
                 "list-selected"
               ).innerHTML += `<div class="list-item">
-                        <h4>${feature.properties["Город"]}</h4>
-                        <a href='#' onclick="map.flyTo({center: [${f.geometry.coordinates}], zoom: 10})">Показать</a>
+                         <h4><a href='#' onclick="map.flyTo({center: [${f.geometry.coordinates}], zoom: 10})">${f.properties["Город"]}</a></h4>
                         </div><hr>`)
           );
         });
@@ -36,8 +48,7 @@ function updateSelectedList() {
       document.getElementById(
         "list-selected"
       ).innerHTML += `<div class="list-item">
-                    <h4>${f.properties["Город"]}</h4>
-                    <a href='#' onclick="map.flyTo({center: [${f.geometry.coordinates}], zoom: 10})">Показать</a>
+                     <h4><a href='#' onclick="map.flyTo({center: [${f.geometry.coordinates}], zoom: 10})">${f.properties["Город"]}</a></h4>
                     </div><hr>`;
     }
   });
@@ -143,14 +154,12 @@ map.on("load", () => {
         },
       });
 
-      // add all items to list
       geojson.features.map((f) => {
         document.getElementById(
           "list-all"
         ).innerHTML += `<div class="list-item">
-                    <h4>${f.properties["Город"]}</h4>
-                    <a href='#' onclick="map.flyTo({center: [${f.geometry.coordinates}], zoom: 10})">Найти на карте</a>
-                    </div><hr>`;
+                        <h4><a href='#' onclick="map.flyTo({center: [${f.geometry.coordinates}], zoom: 10})">${f.properties["Город"]}</a></h4>
+                        </div><hr>`;
       });
 
       // first update

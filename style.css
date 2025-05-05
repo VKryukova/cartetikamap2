@@ -1,27 +1,45 @@
+body,
+html {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#all {
+    width: 100%;
+    height: 100%;
+}
+
+#map {
+    width: auto;
+    height: 100%;
+    margin: 0 18%;
+
+}
+
 h2 {
     margin: 10px;
+    font-size: 22px;
 }
 
 .list-item {
     padding: 10px;
 }
 
-#map {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 230px;
-    left: 230px;
-}
+
 
 #list-selected {
     position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
-    width: 230px;
+    width: 16%;
+    padding: 1%;
     overflow-y: auto;
-    font-family:'Courier New', Courier, monospace;
+    background-color: white;
+    font-family: 'Courier New', Courier, monospace;
+
 }
 
 #list-all {
@@ -29,7 +47,42 @@ h2 {
     top: 0;
     bottom: 0;
     left: 0;
-    width: 230px;
+    width: 16%;
+    padding: 1%;
     overflow-y: auto;
-    font-family:'Courier New', Courier, monospace;
+    background-color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+@media (max-width: 450px) {
+    #all {
+        display: flex;
+        flex-direction: column;
+
+        width: auto;
+        height: 100%;
+    }
+
+    #map {
+        width: auto;
+        height: 50%;
+        margin: 0;
+
+    }
+
+    #list-selected {
+        display: none;
+    }
+
+    #list-all {
+        width: 100%;
+        height: 50%;
+        margin-top: 110%;
+        padding: 0%
+    }
+
+    h4 {
+        margin: 2% 0;
+    }
+
 }
