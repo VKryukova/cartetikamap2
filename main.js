@@ -40,7 +40,7 @@ function updateSelectedList() {
               (document.getElementById(
                 "list-selected"
               ).innerHTML += `<div class="list-item">
-                         <h4><a href='#' onclick="map.flyTo({center: [${f.geometry.coordinates}], zoom: 10})">${f.properties["Город"]}</a></h4>
+                         <h4><a href='#' onclick="map.flyTo({center: [${feature.geometry.coordinates}], zoom: 10})">${feature.properties["Город"]}</a></h4>
                         </div><hr>`)
           );
         });
