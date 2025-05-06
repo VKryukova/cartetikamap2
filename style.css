@@ -13,8 +13,8 @@ html {
 
 #map {
     width: auto;
-    height: 70%;
-    margin: 0;
+    height: 100%;
+    margin: 0 18%;
 
 }
 
@@ -65,7 +65,7 @@ h2 {
 
     #map {
         width: auto;
-        height: 50%;
+        height: 70%;
         margin: 0;
 
     }
