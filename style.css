@@ -15,7 +15,6 @@ html {
     width: auto;
     height: 100%;
     margin: 0 18%;
-
 }
 
 h2 {
@@ -27,8 +26,6 @@ h2 {
     padding: 10px;
 }
 
-
-
 #list-selected {
     position: absolute;
     top: 0;
@@ -39,7 +36,6 @@ h2 {
     overflow-y: auto;
     background-color: white;
     font-family: 'Courier New', Courier, monospace;
-
 }
 
 #list-all {
@@ -58,7 +54,6 @@ h2 {
     #all {
         display: flex;
         flex-direction: column;
-
         width: auto;
         height: 100%;
     }
@@ -67,7 +62,6 @@ h2 {
         width: auto;
         height: 70%;
         margin: 0;
-
     }
 
     #list-selected {
@@ -84,5 +78,4 @@ h2 {
     h4 {
         margin: 2% 0;
     }
-
 }
